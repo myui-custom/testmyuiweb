@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /*background-image: url('black-hole.gif');*/
+    background-size: cover;
+    color: #fff;
+}
+
+
+nav {
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+footer {
+    background-color: transparent;
+    color: #b6aeae;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+    
+}
+
+/* Common styles for both mobile and desktop */
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+    .social-icons {
+        /*position: fixed;
+        bottom: 0;
+        margin-bottom: 200px;
+        right: 0;
+        margin: 20px; /* Adjust the margin as needed */
+    }
+
+    #content {
+        padding: 100px;
+    }
+    
+    .social-icons img {
+        width: 70px;
+        height: 40px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+
+    body {
+        margin: 0;
+        padding: 2rem;
+        background-color: hsl(204, 46%, 27%);
+        display: grid;
+        gap: 1rem;
+        align-content: center;
+        padding-left: 10px;
+        margin-left: 5px;
+      }
+    
+      .button {
+        display: inline-block;
+        padding: 10px 100px;
+        text-decoration: none;
+        color: #000000;
+        background-color: #caf8ff;
+        border: none;
+        /*margin-top: auto;
+        margin-left: 0px;
+        margin-right: 5px;
+        margin-bottom: auto;*/
+        width: 35px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 11px;
+        transition: background-color 0.3s;
+        padding-left: 5px;
+        padding-right: 15px;
+    }
+    header {
+        text-align: center;
+        background-color: transparent;
+    }
+    
+    header img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 30px;
+    }
+ 
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 768px) {
+    .social-icons {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 20px; /* Adjust the margin as needed */
+    }
+    
+    #content {
+        padding: 40px;
+    }
+    .social-icons img {
+        width: 70px;
+        height: 40px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+
+    body {
+        margin: 0;
+        padding: 2rem;
+        background-color: hsl(204, 46%, 27%);
+        display: grid;
+        gap: 1rem;
+        align-content: center;
+        padding-left: 10px;
+        margin-left: 5px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #000000;
+        background-color: #caf8ff;
+        border: none;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: 5px;
+        margin-bottom: auto;
+        width: 50px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        padding-left: 7px;
+        padding-right: 30px;
+    }
+
+    header {
+        text-align: center;
+        background-color: transparent;
+    }
+    
+    header img {
+        max-width: 30%;
+        height: auto;
+        border-radius: 30px;
+    }
+}
+
+/* Add these styles to your existing CSS file */
+
+
+.button:hover {
+    background-color: #555;
+}
+
+/* ... your existing styles */
+a {
+    color: rgb(231, 231, 231); /* Change this to the color you desire */
+    text-decoration: none; /* Remove underline by default */
+}
+
+/* Style for visited links */
+/*a:visited {
+    color: rgb(7, 124, 187); /* Change this to the color you desire for visited links */
+}
+
+/* Style for links when hovered over */
+a:hover {
+    color: rgb(108, 31, 241); /* Change this to the color you desire on hover */
+}
+
+/* Style for active links (when clicked) */
+a:active {
+    color: green; /* Change this to the color you desire when clicked */
+}
+/* countdown */
+.countdown {
+    --number-color: hsl(0 0% 100%);
+    --text-color: hsl(127, 78%, 81%);
+    --dot-color: hsl(0 0% 10%);
+    --dot-color-remaining: hsl(182, 100%, 66%);
+    --dot-color-active: hsl(0 100% 50%);
+    font-family: system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: min(60rem, 50%);
+    margin-inline: auto;
+    /*container: inline-size;*/
+    > .part {
+      aspect-ratio: 1/1;
+      display: grid;
+      place-items: center;
+      > .remaining {
+        grid-area: 1/1;
+        color: hsl(0 0% 100%);
+        display: grid;
+        text-align: center;
+        font-size: 4cqi;
+        > .number {
+          color: var(--number-color);
+        }
+        > .text {
+          color: var(--text-color);
+          text-transform: uppercase;
+          font-size: 0.5em;
+        }
+      }
+      > .dot-container {
+        grid-area: 1/1;
+        height: 100%;
+        width: 4%;
+        rotate: calc(360deg / var(--dots) * var(--dot-idx));
+        > .dot {
+          width: 100%;
+          aspect-ratio: 1/1;
+          background-color: var(--dot-color);
+          border-radius: 50%;
+          transition: background-color 0.25s;
+          &[data-active="true"] {
+            background-color: var(--dot-color-remaining);
+            &[data-lastactive="true"] {
+              background-color: var(--dot-color-active);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  * {
+    box-sizing: content-box;
+  }
+  html,
+ body {
+    height: 95%;
+  }
+  
+  h1 {
+    font-family: system-ui, sans-serif;
+    color: hsl(0 0% 100%);
+    text-align: center;
+    font-size: 40px; /* Decreased font size */
+  line-height: 1.5; /* Adjusted line height */
+    > span:last-of-type {
+      color: hsl(182 100% 66%);
+    }
+  }
+  
